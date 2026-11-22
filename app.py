@@ -41,7 +41,11 @@ if pdf:
 
         st.success("Agente ejecutado")
 
+        st.write("STDOUT")
         st.text(resultado.stdout)
+
+        st.write("STDERR")
+        st.text(resultado.stderr)
 
         excels = sorted(
             glob.glob("Agente_Banco/Banco_Ganadero_*.xlsx"),
