@@ -22,10 +22,6 @@ pdfs = sorted(
     reverse=True
 )
 
-if not pdfs:
-    raise FileNotFoundError(
-        f"No se encontró ningún PDF EXT_BG*.pdf en:\n{CARPETA}"
-    )
 
 PDF_FILE = None
 
@@ -38,6 +34,12 @@ if len(sys.argv) > 1:
 elif pdfs:
 
     PDF_FILE = pdfs[0]
+
+else:
+
+    raise FileNotFoundError(
+        f"No se encontró ningún PDF EXT_BG*.pdf en:\n{CARPETA}"
+    )
 
 TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
 
