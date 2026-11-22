@@ -2,6 +2,7 @@ import streamlit as st
 from pathlib import Path
 import subprocess
 import glob
+import sys
 
 st.title("Banco Ganadero")
 
@@ -31,7 +32,7 @@ if pdf:
 
         resultado = subprocess.run(
             [
-                "python",
+                sys.executable,
                 "Agente_Banco/pdf_a_excel_web.py",
                 str(ruta_pdf)
             ],
